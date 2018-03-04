@@ -35,14 +35,14 @@
         {% endblock %}
     </h2>
      <div>
-         <span style="float: right;">
+    <span style="float: right;">
       {%if session['user']==None%}
       <a href="/login">login</a>
       <a href="/register">register</a>
       {%else%}
       {{session['user'][0]}}
-      {%endif%}
-        </span>
+      {%endif%}    
+    </span>
     </div>
     <div>
         {% block vsebina %}

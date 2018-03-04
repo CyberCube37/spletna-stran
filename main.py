@@ -8,6 +8,7 @@ import baza
 
 app = Flask(__name__)
 app.secret_key = 'kajdsfhg'
+baza.ustvari_tabele()
 
 @app.route("/")
 def index():
@@ -15,8 +16,9 @@ def index():
 
 @app.route("/logout")
 def logout():
-    session["user"]=None
+    session['user']= None
     return redirect("/")
+
 @app.route("/logo")
 def logo():
     return render_template("domaca_stran.html")
