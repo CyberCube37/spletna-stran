@@ -5,9 +5,6 @@
         <img src="/static/slika.png" />
     </div>
     <p>
-        <a href='/druga_stran'>
-            Pojdi na drugo stran
-        </a>
         Pojdi na <a href="http://google.com">Google</a>
     </p>
     <p>
@@ -16,5 +13,11 @@
     <p>
         Tukaj je besedilo drugega odstavka. Naslednja beseda je <b>krepka</b> in naslednja <i>poševna</i>.
     </p>
+    <p>
+      obisci blog:
+      <br>
+        {% for a in range(1,100) %}
+                <a href="/blog/{{a}}"><button>{{a}}</button></a>
+        {% endfor %}
+    </p>
 {% endblock %}
-

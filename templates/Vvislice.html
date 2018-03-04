@@ -4,14 +4,19 @@
     <p>
         <a href='/'>
             Pojdi na domačo stran
-            
+
         </a>
+    </p>
+    <p>
+      {% if session['user'] is None %}
+      Niste prijavljeni! Vas rezultat ne bo shranjen!
+      {% endif %}
     </p>
     <p>
         tukaj bo slika#{{session['slika']}}
     </p>
         <p>
-            {%if session['slika'] < 10%}    
+            {%if session['slika'] < 10%}
                 {% for znak in session['beseda']%}
                     {% if znak in session['ugibal'] %}
                         {{znak}}
@@ -31,8 +36,5 @@
             {% endif %}
 
         {% endfor %}
-    </p>
-    <p>
-        <b>{{session['beseda']}}</b>
     </p>
 {% endblock %}

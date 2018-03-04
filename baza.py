@@ -61,9 +61,7 @@ def dobi_uporabnika(user_id=None, username=None, password=None):
         pass
     return rezultat.fetchone()
 
-if __name__ == "__main__":
-    ustvari_tabele()
-    vstavi_novega_uporabnika('kirito', 'asuna')
-    pov = sqlite3.connect(IME_BAZE)
-    r = pov.execute("select * from Users").fetchall()
-    print(r)
+def dobi_ID(username):
+    povezava = sqlite3.connect(IME_BAZE)
+    rezultat = povezava.execute('SELECT rowid FROM Users WHERE username=?', (username,))
+    return rezultat

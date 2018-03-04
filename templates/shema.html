@@ -35,13 +35,17 @@
         {% endblock %}
     </h2>
      <div>
+       <a href="/">domov</a>
+       <a href="/vislice">vislice</a>
+       <a href="/lestvica">lestvica</a>
     <span style="float: right;">
       {%if session['user']==None%}
       <a href="/login">login</a>
       <a href="/register">register</a>
       {%else%}
       {{session['user'][0]}}
-      {%endif%}    
+      <a href="/logout">logout</a>
+      {%endif%}
     </span>
     </div>
     <div>

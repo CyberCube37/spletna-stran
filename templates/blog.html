@@ -11,4 +11,12 @@
         <br/>
         <a href='/blog/{{prejsni}}'>Blog #{{prejsni}}</a>
     </p>
+    <p>
+      obisci blog:
+    </p>
+    <p>
+        {% for i in range(1,100) %}
+                <a href="/blog/{{i}}"><button>{{i}}</button></a>
+        {% endfor %}
+    </p>
 {% endblock %}
