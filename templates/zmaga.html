@@ -1,0 +1,17 @@
+{% extends 'shema.html' %}
+{% block podnaslov %}vislice{% endblock %}
+{% block vsebina %}
+    <p>
+        <a href='/vislice'>
+            nova  igra
+            
+        </a>
+    </p>
+    <p>
+        Bravo uganil sibesedo {{session['beseda']}}
+
+    </p>
+        <p>
+            stevilo napacnih ugibanj: {{session['slika']}}
+    </p>
+{% endblock %}

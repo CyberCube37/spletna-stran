@@ -1,0 +1,18 @@
+{% extends 'shema.html' %}
+{% block podnaslov %}Registracija{% endblock %}
+
+{% block vsebina %}
+
+{%if session['registriran']==None%}
+<b>To uporabnisko ime je ze v uporabi!</b>
+{%endif%}
+    <p>
+        <form method="POST">
+            <input type="text" name="username">
+            <input type="password" name="password">
+            <input type="submit">
+        </form>
+    </p>
+    <p>
+    </p>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'shema.html' %}
+{% block podnaslov %}vislice{% endblock %}
+{% block vsebina %}
+    <p>
+        <a href='/'>
+            Pojdi na domačo stran
+            
+        </a>
+    </p>
+    <p>
+        tukaj bo slika#{{session['slika']}}
+    </p>
+        <p>
+            {%if session['slika'] < 10%}    
+                {% for znak in session['beseda']%}
+                    {% if znak in session['ugibal'] %}
+                        {{znak}}
+                    {% else %}
+                        _
+                    {% endif %}
+
+                {% endfor %}
+            {%else%}
+            <b>konec igre</b>
+            {% endif %}
+    </p>
+    <p>
+        {% for crka in letters %}
+            {% if crka not in session['ugibal'] %}
+                <a href="/vislice/{{crka}}"><button>{{crka}}</button></a>
+            {% endif %}
+
+        {% endfor %}
+    </p>
+    <p>
+        <b>{{session['beseda']}}</b>
+    </p>
+{% endblock %}

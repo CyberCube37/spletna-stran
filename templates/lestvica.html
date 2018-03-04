@@ -1,0 +1,15 @@
+{% extends 'shema.html' %}
+{% block podnaslov %}lestvica najboljsih{% endblock %}
+{% block vsebina %}
+   vsebine ni
+   {{najboljsi}}
+   <table border="5px", bgcolor="green">
+   {%for username, napake, beseda in najboljsi%}
+   <tr>
+       <td>{{username}}</td>
+       <td>{{napake}}</td>
+       <td>{{beseda}}</td>
+   </tr>
+   {%endfor%}
+   </table>
+{% endblock %}

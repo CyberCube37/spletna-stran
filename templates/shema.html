@@ -1,0 +1,53 @@
+<html>
+<head>
+    <title>Moja testna stran</title>
+    <style>
+        h1 {
+            color: red;
+            border: solid yellow;
+            border-radius: 10px;
+        }
+        h2 {
+            color: green;
+            border: dashed;
+        }
+        body {
+            color: blue;
+            background-color: white;
+        }
+        #stran {
+            width: 800px;
+            margin: auto;
+            background-color: #eee;
+            padding: 10px;
+        }
+        p {text-align: center;}
+        .center {text-align: center;}
+    </style>
+</head>
+<body>
+<div id="stran">
+    <h1>
+        Moja testna stran
+    </h1>
+    <h2>
+        {% block podnaslov %}
+        {% endblock %}
+    </h2>
+     <div>
+         <span style="float: right;">
+      {%if session['user']==None%}
+      <a href="/login">login</a>
+      <a href="/register">register</a>
+      {%else%}
+      {{session['user'][0]}}
+      {%endif%}
+        </span>
+    </div>
+    <div>
+        {% block vsebina %}
+        {% endblock %}
+    </div>
+</div>
+</body>
+</html>
